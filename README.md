@@ -1,7 +1,7 @@
 # Subsidy Provider using Scaffold Eth 💵
 
 ## Intoduction 💁
-Hardhat 👷 project and source code availabe - (Subsidy Provider)[https://github.com/priyanshu87694/Subsidy-Provider]
+Hardhat 👷 project and source code availabe - [SubsidyProvider] (https://github.com/priyanshu87694/Subsidy-Provider)
 
 ## Getting Started 🟢
 
