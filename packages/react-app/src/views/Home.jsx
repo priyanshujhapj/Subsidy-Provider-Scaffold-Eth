@@ -16,6 +16,7 @@ function Home({ tx, address, mainnetProvider, yourLocalBalance, readContracts, w
   // you can also use hooks locally in your component of choice
   // in this case, let's keep track of 'purpose' variable from our contract
   const [amount, setAmount] = useState("0");
+  const [cardNumber, setCardNumber] = useState("0");
 
   return (
     <div style={{ border: "1px solid #cccccc", padding: 16, width: 300, margin: "auto", marginTop: 64 }}>
@@ -41,6 +42,37 @@ function Home({ tx, address, mainnetProvider, yourLocalBalance, readContracts, w
         >
           Pay For Gas 💵
         </Button>
+      </div>
+      <Divider />
+      <div>
+        <h3>Enter Your Card Number</h3>
+        <Input
+          placeholder="000000000000"
+          onChange={e => {
+            setCardNumber(e.target.value);
+          }}
+        />
+        <br /> <br />
+        <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <Input
+            type="number"
+            placeholder="amount"
+            onChange={e => {
+              setAmount(e.target.value);
+            }}
+          />
+          <Button
+            onClick={async () => {
+              await tx(
+                writeContracts.GasAgency.payForGasWithCard(cardNumber, {
+                  value: ethers.utils.parseEther(amount.toString()),
+                }),
+              );
+            }}
+          >
+            Pay For Gas 💵
+          </Button>
+        </div>
       </div>
     </div>
   );
