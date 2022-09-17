@@ -11,6 +11,8 @@ Hardhat 👷 project and source code availabe - [SubsidyProvider](https://github
     ```
 
 ### Deploy 📡 the GasStation Contract
+
+    default network is `goerli`
     ```
-    yarn deploy
+    yarn deploy --network goerli
     ```
