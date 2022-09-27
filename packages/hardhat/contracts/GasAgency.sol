@@ -35,8 +35,8 @@ contract GasAgency is VRFConsumerBaseV2 {
         string name;
         bool isValid;
     }
-    mapping (uint256 => Card) private cards;
-    mapping (address => bool) private issuedCardsOnAddresses;
+    mapping (uint256 => Card) public cards;
+    mapping (address => bool) public issuedCardsOnAddresses;
     mapping (address => uint256) public addressToCardnumber;
 
     // Requests
