@@ -30,6 +30,7 @@ import externalContracts from "./contracts/external_contracts";
 import deployedContracts from "./contracts/hardhat_contracts.json";
 import { Transactor, Web3ModalSetup } from "./helpers";
 import { Home } from "./views";
+import User from "./views/User";
 import { useStaticJsonRPC } from "./hooks";
 
 const { ethers } = require("ethers");
@@ -290,6 +291,9 @@ function App(props) {
         <Menu.Item key="/">
           <Link to="/">Gas Station</Link>
         </Menu.Item>
+        <Menu.Item key="/user">
+          <Link to="/user">User</Link>
+        </Menu.Item>
       </Menu>
       <Switch>
         <Route exact path="/">
@@ -304,7 +308,17 @@ function App(props) {
           />
         </Route>
       </Switch>
-
+      <Switch>
+        <Route exact path="/user">
+          {/* pass in any web3 props to this Home component. For example, yourLocalBalance */}
+          <User
+            address={address}
+            mainnetProvider={mainnetProvider}
+            yourLocalBalance={yourLocalBalance}
+            readContracts={readContracts}
+          />
+        </Route>
+      </Switch>
       <ThemeSwitch />
 
       {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
