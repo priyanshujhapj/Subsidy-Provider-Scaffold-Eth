@@ -21,7 +21,7 @@ Must add a `.env` file in hardhat folder in `/packages/hardhat/` that contains
     ```
 
 ### Gas Station View
-![⛽](GasStation.png)
+![⛽](view_1.png)
 
 ### User / Card view
-![⛽](CardView.png)
+![⛽](view2.png)
